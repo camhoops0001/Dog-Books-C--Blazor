@@ -1,4 +1,4 @@
-## Project setup
+# Project setup
 This is setup in Microsoft SQL Server Management Studio 18 <br>
 Run the two SQL files within the main folder
 ```
@@ -8,7 +8,7 @@ And
 ```
 step2_add-StoredProc
 ```
-# Running the Project
+## Running the Project
 You will need to build and run the two .sln files.
 ```
 Dog-Books-Backend.sln
@@ -19,7 +19,7 @@ Dog-Books-Frontend.sln
 ```
 This will run the backend API and the front end Blazor application
 
-# Things to consider
+## Things to consider
 My local instance of SSMS is setup for Server Name (LocalDb)\MSSQLLocalDB
 
 If you connect to your local SQL instance with a single dot "." for Server Name.. <br>
@@ -27,9 +27,9 @@ If you connect to your local SQL instance with a single dot "." for Server Name.
 You will need to change your DefaultConnection within appsettings.json to Server=.\\SQLEXPRESS <br>
 ![image](https://github.com/camhoops0001/Dog-Books-C--Blazor/assets/95889699/66d50c82-ca64-41b3-9483-b48d420fd0a7)
 
-## Application Information
+# Application Information
 
-# This is a WebApi meant to utilize two separate backend API's.
+## This is a WebApi meant to utilize two separate backend API's.
 
 Dog API  
 
@@ -76,7 +76,7 @@ We could specify searching by author, by the breed being mentioned somewhere in 
 
 A lot of cool possibilities here.  
 
-##Things I would update
+## Things I would update
 - I have very little error management at the moment, I would love to add more exception handling on both ends of the project backend/front end. <br>
 - If this app went live it would be be very beneficial to utilize log4net or NLog for logging as well. <br>
 - Would move all of these services to Azure.. The Front End, Back End, and the database. <br>
