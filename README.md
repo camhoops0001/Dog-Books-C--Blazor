@@ -78,6 +78,7 @@ A lot of cool possibilities here.
 
 ## Things I would update
 - I have very little error management at the moment, I would love to add more exception handling on both ends of the project backend/front end. <br>
+- Implement some Unit Testing to ensure exisitng functionality, and improve ease of maintanability. Either xUnit or NUnit <br>
 - If this app went live it would be be very beneficial to utilize log4net or NLog for logging as well. <br>
 - Would move all of these services to Azure.. The Front End, Back End, and the database. <br>
 - Would secure the Api Key and any other sensitive information in the Azure Key Vault. <br>
