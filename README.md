@@ -56,7 +56,7 @@ Utilizing OpenLibraries API to gather information about books that relate to dif
 
 -Author Search  
 
-Packages Used:
+Packages Used: <br>
 -NewtonSoft.Json <br>
 -RestSharp <br>
 -System.Text.Json <br>
