@@ -94,13 +94,13 @@
 
     public List<string> BreedList = new List<string>();
 
-    bool BreedSelected = false;
-    bool loading = true;
-    string loadingDogPicture = "";
-    string selectedBreed = "";
-    DogAndBookResponse chosenBreedResponse = new DogAndBookResponse();
-    bool bookSaved = false;
-    bool savingBookDelay = false;
+    private bool BreedSelected = false;
+    private bool loading = true;
+    private string loadingDogPicture = "";
+    private string selectedBreed = "";
+    private DogAndBookResponse chosenBreedResponse = new DogAndBookResponse();
+    private bool bookSaved = false;
+    private bool savingBookDelay = false;
 
 
     protected override void OnInitialized()
@@ -116,6 +116,8 @@
         await InvokeAsync(StateHasChanged);
     }
 
+    //Thought about breaking these out into a service but I take care of a lot of conditional front end logic by setting properties
+    //within these methods so I decided against it.
     public async Task<List<string>> GetDogBreedsList()
     {
         string url = Configuration.GetValue<string>("GetDogBreedsUrl") + "?apiKey=" + ApiKey;
@@ -148,7 +150,6 @@
         {
             BreedSelected = true;
             selectedBreed = breed;
-            //GetLoadingDogBreedPicture
             string placeholderString = await GetDogPictureURLByBreedUrl(breed);
             RestResponse response = await client.GetAsync(request);
             DogAndBookResponse chosenBreedBook = JsonConvert.DeserializeObject<DogAndBookResponse>(response.Content);
@@ -176,7 +177,6 @@
             RestResponse response = await client.GetAsync(request);
             string dogPictureUrl = JsonConvert.DeserializeObject<string>(response.Content);
             loadingDogPicture = dogPictureUrl;
-            //Not sure if all of these are necessary
             await InvokeAsync(StateHasChanged);
             return dogPictureUrl;
 

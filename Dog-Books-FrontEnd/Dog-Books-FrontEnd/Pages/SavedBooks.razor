@@ -4,7 +4,7 @@
 @using Newtonsoft.Json
 @using RestSharp
 
-
+@if(AreAnyBooksSaved =="yes")
     @foreach(DogAndBookResponse book in AllSavedBooks)
 {
     <p class="centered-content">
@@ -20,6 +20,23 @@
         <br> <br> <br>
     </p>
 }
+@if(AreAnyBooksSaved == "no")
+{
+    <div class="centered-content">
+        <div>
+            Looks like you better go save a book! Navigate back to Select Dog Breed and get started!
+        </div>
+    </div>
+}
+@if(AreAnyBooksSaved == "awaiting")
+{
+        <div class="spinner-square">
+            <div class="square-1 square"></div>
+            <div class="square-2 square"></div>
+            <div class="square-3 square"></div>
+        </div>
+}
+
 
 
 
@@ -28,6 +45,9 @@
     private IConfiguration Configuration { get; set; }
 
     private string ApiKey;
+    //This way it doesn't load in the "no books are saved" while the logic is still taking place
+    //Just adds the loading spinner until conditional data is set
+    private string AreAnyBooksSaved = "awaiting";
 
     public List<DogAndBookResponse> AllSavedBooks = new List<DogAndBookResponse>();
 
@@ -39,6 +59,14 @@
     protected override async Task OnInitializedAsync()
     {
         AllSavedBooks = await GetSavedBooks();
+        if(AllSavedBooks.Count > 0)
+        {
+            AreAnyBooksSaved = "yes";
+        }
+        else
+        {
+            AreAnyBooksSaved = "no";
+        }
         await InvokeAsync(StateHasChanged);
     }
 

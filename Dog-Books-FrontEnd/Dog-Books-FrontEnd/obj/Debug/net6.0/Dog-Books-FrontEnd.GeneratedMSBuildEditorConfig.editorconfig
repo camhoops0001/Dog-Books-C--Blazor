@@ -8,49 +8,49 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Dog_Books_FrontEnd
 build_property.RootNamespace = Dog_Books_FrontEnd
-build_property.ProjectDir = C:\git\Dog-Books\Dog-Books-FrontEnd\Dog-Books-FrontEnd\
+build_property.ProjectDir = C:\git\Dog-Books-C#-Blazor\Dog-Books-FrontEnd\Dog-Books-FrontEnd\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\git\Dog-Books\Dog-Books-FrontEnd\Dog-Books-FrontEnd
+build_property.MSBuildProjectDirectory = C:\git\Dog-Books-C#-Blazor\Dog-Books-FrontEnd\Dog-Books-FrontEnd
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/git/Dog-Books/Dog-Books-FrontEnd/Dog-Books-FrontEnd/App.razor]
+[C:/git/Dog-Books-C\#-Blazor/Dog-Books-FrontEnd/Dog-Books-FrontEnd/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/git/Dog-Books/Dog-Books-FrontEnd/Dog-Books-FrontEnd/Pages/Index.razor]
+[C:/git/Dog-Books-C\#-Blazor/Dog-Books-FrontEnd/Dog-Books-FrontEnd/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/git/Dog-Books/Dog-Books-FrontEnd/Dog-Books-FrontEnd/Pages/SavedBooks.razor]
+[C:/git/Dog-Books-C\#-Blazor/Dog-Books-FrontEnd/Dog-Books-FrontEnd/Pages/SavedBooks.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2F2ZWRCb29rcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/git/Dog-Books/Dog-Books-FrontEnd/Dog-Books-FrontEnd/Pages/Select-Dog-Breed.razor]
+[C:/git/Dog-Books-C\#-Blazor/Dog-Books-FrontEnd/Dog-Books-FrontEnd/Pages/Select-Dog-Breed.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VsZWN0LURvZy1CcmVlZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/git/Dog-Books/Dog-Books-FrontEnd/Dog-Books-FrontEnd/_Imports.razor]
+[C:/git/Dog-Books-C\#-Blazor/Dog-Books-FrontEnd/Dog-Books-FrontEnd/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/git/Dog-Books/Dog-Books-FrontEnd/Dog-Books-FrontEnd/Shared/MainLayout.razor]
+[C:/git/Dog-Books-C\#-Blazor/Dog-Books-FrontEnd/Dog-Books-FrontEnd/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-7ayw31zuef
 
-[C:/git/Dog-Books/Dog-Books-FrontEnd/Dog-Books-FrontEnd/Shared/NavMenu.razor]
+[C:/git/Dog-Books-C\#-Blazor/Dog-Books-FrontEnd/Dog-Books-FrontEnd/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-oswurjjere
 
-[C:/git/Dog-Books/Dog-Books-FrontEnd/Dog-Books-FrontEnd/Pages/Error.cshtml]
+[C:/git/Dog-Books-C\#-Blazor/Dog-Books-FrontEnd/Dog-Books-FrontEnd/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/git/Dog-Books/Dog-Books-FrontEnd/Dog-Books-FrontEnd/Pages/_Host.cshtml]
+[C:/git/Dog-Books-C\#-Blazor/Dog-Books-FrontEnd/Dog-Books-FrontEnd/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/git/Dog-Books/Dog-Books-FrontEnd/Dog-Books-FrontEnd/Pages/_Layout.cshtml]
+[C:/git/Dog-Books-C\#-Blazor/Dog-Books-FrontEnd/Dog-Books-FrontEnd/Pages/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -912,11 +912,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\git\\Dog-Books\\Dog-Books-BackEnd\\Dog-Books-BackEnd\\Dog-Books-BackEnd.csproj",
+      "projectUniqueName": "C:\\git\\Dog-Books-C#-Blazor\\Dog-Books-BackEnd\\Dog-Books-BackEnd\\Dog-Books-BackEnd.csproj",
       "projectName": "Dog-Books-BackEnd",
-      "projectPath": "C:\\git\\Dog-Books\\Dog-Books-BackEnd\\Dog-Books-BackEnd\\Dog-Books-BackEnd.csproj",
+      "projectPath": "C:\\git\\Dog-Books-C#-Blazor\\Dog-Books-BackEnd\\Dog-Books-BackEnd\\Dog-Books-BackEnd.csproj",
       "packagesPath": "C:\\Users\\bruh\\.nuget\\packages\\",
-      "outputPath": "C:\\git\\Dog-Books\\Dog-Books-BackEnd\\Dog-Books-BackEnd\\obj\\",
+      "outputPath": "C:\\git\\Dog-Books-C#-Blazor\\Dog-Books-BackEnd\\Dog-Books-BackEnd\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bruh\\AppData\\Roaming\\NuGet\\NuGet.Config",

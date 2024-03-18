@@ -12,20 +12,16 @@ using System.Text;
 
 namespace Dog_Books_BackEnd.Controllers
 {
-    public class DogBookController : Controller//, IDogBookConroller
+    public class DogBookController : Controller, IDogBookConroller
     {
         public readonly Settings _settings;
         private readonly IConfiguration _configuration;
-        //public readonly ConnectionStrings _connectionStrings;
 
         public DogBookController(IOptions<Settings> options, IConfiguration configuration)
         {
             _settings = options.Value;
             _configuration = configuration;
-            //_connectionString = options1.Value;
         }
-
-
 
         #region Dog API Endpoint Calls
 
@@ -92,6 +88,7 @@ namespace Dog_Books_BackEnd.Controllers
 
         #endregion
 
+
         #region Book API Endpoint Calls (Not currently using)
         //These are unecessary to include as seperate accessible calls. 
         //This is just what I originally created to debug/test through swagger. 
@@ -142,6 +139,7 @@ namespace Dog_Books_BackEnd.Controllers
 
 
         #endregion
+
 
         #region Joint API Calls
 
@@ -346,6 +344,7 @@ namespace Dog_Books_BackEnd.Controllers
 
         #endregion
 
+
         #region Book API Method Logic
 
         public async Task<string> SearchBooksByDogAsync(string breed)
@@ -446,6 +445,7 @@ namespace Dog_Books_BackEnd.Controllers
 
         #endregion
 
+
         #region Joint API Method Logic
 
         public async Task<DogAndBookResponse> GetBookAndDogPictureByBreedAsync(string breed)
@@ -477,6 +477,7 @@ namespace Dog_Books_BackEnd.Controllers
             return dogAndBookResponse;
         }
         #endregion
+
 
         #region General Methods
 

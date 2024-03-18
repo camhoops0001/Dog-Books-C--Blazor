@@ -27,7 +27,6 @@ builder.Services.AddCors(options =>
 });
 
 //I call my method from "ApplicationSettingsBuilder", and now my environment specific settings are available
-//to call within my controllers
 builder.Host.ConfigureAppSettings();
 
 var settings = builder.Configuration.GetRequiredSection("Settings").Get<Settings>();

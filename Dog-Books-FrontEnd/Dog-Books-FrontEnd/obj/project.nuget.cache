@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RJRCX+mkrJ/q/N0sYGxSMEqA0eKnEIE3pQaBfZ3KTj6zKL5wRdHz/dCiCmCd4rjOKu6ugRx8OHK0e8XL30SubA==",
+  "dgSpecHash": "xlHOXKns1GsmYJVKnrW/rLcX3TPK+UtsJr4LGvq+F368fORcSCVqAI2XRZ7OAbjyO9phPIdpwYlEr5vQkRLvog==",
   "success": true,
-  "projectFilePath": "C:\\git\\Dog-Books\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd.csproj",
+  "projectFilePath": "C:\\git\\Dog-Books-C#-Blazor\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bruh\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\bruh\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",

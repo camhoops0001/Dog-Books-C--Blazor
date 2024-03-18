@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\git\\Dog-Books\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd.csproj": {}
+    "C:\\git\\Dog-Books-C#-Blazor\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd.csproj": {}
   },
   "projects": {
-    "C:\\git\\Dog-Books\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd.csproj": {
+    "C:\\git\\Dog-Books-C#-Blazor\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\git\\Dog-Books\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd.csproj",
+        "projectUniqueName": "C:\\git\\Dog-Books-C#-Blazor\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd.csproj",
         "projectName": "Dog-Books-FrontEnd",
-        "projectPath": "C:\\git\\Dog-Books\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd.csproj",
+        "projectPath": "C:\\git\\Dog-Books-C#-Blazor\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd.csproj",
         "packagesPath": "C:\\Users\\bruh\\.nuget\\packages\\",
-        "outputPath": "C:\\git\\Dog-Books\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd\\obj\\",
+        "outputPath": "C:\\git\\Dog-Books-C#-Blazor\\Dog-Books-FrontEnd\\Dog-Books-FrontEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bruh\\AppData\\Roaming\\NuGet\\NuGet.Config",

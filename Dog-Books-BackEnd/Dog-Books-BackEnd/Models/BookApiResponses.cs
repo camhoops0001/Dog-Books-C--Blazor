@@ -26,9 +26,4 @@
             public string Key { get; set; }
         }
 
-        public class SavedBooks
-        {
-            public string Title { get; set; }
-            public string Author { get; set; }
-        }
 }
