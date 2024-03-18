@@ -65,8 +65,7 @@ Packages Used: <br>
 
 You pick your favorite dog breed, and the application will give you a book that includes the specific breed you selected. It's built to eventually be able to let the user choose between "X" amount of books that we display. 
 
-All of the breeds listed have a direct match of some sort with mentions in a book. 
-(Right now Beagles, and one or two others are still erroring when trying to retrieve a book to save, something to look into if taking this further. The structure of a couple of the breeds returns must be slightly different then the rest)
+All of the breeds listed have a direct match of some sort with mentions in a book.
 
 It is currently hooked up to give you the ability to select a breed and return a single book that you have the option to save to your collection.
 
