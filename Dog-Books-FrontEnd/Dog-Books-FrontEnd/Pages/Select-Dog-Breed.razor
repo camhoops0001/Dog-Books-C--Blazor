@@ -1,0 +1,225 @@
+﻿@page "/select-dog-breed"
+@using Microsoft.Extensions.Configuration;
+@using RestSharp;
+@using Newtonsoft.Json;
+@using System.Net.Http.Json;
+@using Dog_Books_FrontEnd.Data;
+
+@if (!BreedSelected)
+{
+    <div>
+        <PageTitle>Select Dog Breed</PageTitle>
+
+        <h3>Pick your favorite dog, and we will give you a book specifically curated to include the breed you selected!</h3> <br />
+        <h3>Feel free to pick the same breed more than once, there are plenty of reading options</h3>
+        <br />
+        <div>
+            @foreach (string breed in BreedList)
+            {
+                <p @onclick="() => GetBookAndDogPictureByBreed(breed)">
+                    @breed
+                </p>
+            }
+        </div>
+    </div>
+}
+@if(BreedSelected & loading)
+{
+    <div class="spinner-square">
+            <div class="square-1 square"></div>
+            <div class="square-2 square"></div>
+            <div class="square-3 square"></div>
+    </div>
+    <div class="centered-content">
+        <div>
+            Please enjoy this picture of a dog from the breed you selected while we curate your selection
+        </div>
+        <img src="@loadingDogPicture"/>
+    </div>
+
+}
+@if(BreedSelected & !loading & !bookSaved & !savingBookDelay)
+{
+     <div class="centered-content">
+        <div>
+          Your book tailored to the breed "@selectedBreed" is ready! <br> <br>
+            Title: <br> @chosenBreedResponse.Title <br> <br>
+            Author:<br> @chosenBreedResponse.Author <br> <br>
+        </div>
+         <button class="btn btn-primary" @onclick="() => SaveBook()" >
+             Save Book
+         </button>
+        <br> <br>
+        <img src="@chosenBreedResponse.DogPictureUrl"/>
+    </div>
+}
+
+@if(savingBookDelay)
+{
+        <div class="spinner-square">
+            <div class="square-1 square"></div>
+            <div class="square-2 square"></div>
+            <div class="square-3 square"></div>
+        </div>
+        <div class="centered-content">
+          Your book tailored to the breed "@selectedBreed" is saving now <br> <br>
+        </div>
+}
+
+@if(bookSaved)
+{
+      <div class="centered-content">
+        <div>
+          Your book tailored to the breed "@selectedBreed" has been saved! <br> <br>
+          Would you like to see all of your saved books?     <br><br>
+        </div>
+            <NavLink class="btn btn-primary" href="saved-books">
+                Take me to my saved books
+            </NavLink>
+        <br> <br>
+            <NavLink class="btn btn-primary" href="/">
+                I'll check that out later let me pick more breeds!
+            </NavLink>
+    </div>
+}
+
+
+
+
+@code {
+    [Inject]
+    private IConfiguration Configuration { get; set; }
+
+    private string ApiKey;
+
+    public List<string> BreedList = new List<string>();
+
+    bool BreedSelected = false;
+    bool loading = true;
+    string loadingDogPicture = "";
+    string selectedBreed = "";
+    DogAndBookResponse chosenBreedResponse = new DogAndBookResponse();
+    bool bookSaved = false;
+    bool savingBookDelay = false;
+
+
+    protected override void OnInitialized()
+    {
+        ApiKey = Configuration.GetValue<string>("ApiKey");
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        BreedList = await GetDogBreedsList();
+        //Took awhile to find this, I need to Invoke a state change for the list to populate
+        await InvokeAsync(StateHasChanged);
+    }
+
+    public async Task<List<string>> GetDogBreedsList()
+    {
+        string url = Configuration.GetValue<string>("GetDogBreedsUrl") + "?apiKey=" + ApiKey;
+        RestClient client = new RestClient(url);
+        RestRequest request = new RestRequest();
+        client.AddDefaultHeader("Content-Type", "application/json");
+
+        try
+        {
+            RestResponse response = await client.GetAsync(request);
+            List<string> stringList = JsonConvert.DeserializeObject<List<string>>(response.Content);
+            BreedList = stringList;
+            return stringList;
+
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+    }
+
+    public async Task<DogAndBookResponse> GetBookAndDogPictureByBreed(string breed)
+    {
+        string url = Configuration.GetValue<string>("GetBookAndDogPictureByBreed") + "?apiKey=" + ApiKey + "&breed=" + breed;
+        RestClient client = new RestClient(url);
+        RestRequest request = new RestRequest();
+        client.AddDefaultHeader("Content-Type", "application/json");
+
+        try
+        {
+            BreedSelected = true;
+            selectedBreed = breed;
+            //GetLoadingDogBreedPicture
+            string placeholderString = await GetDogPictureURLByBreedUrl(breed);
+            RestResponse response = await client.GetAsync(request);
+            DogAndBookResponse chosenBreedBook = JsonConvert.DeserializeObject<DogAndBookResponse>(response.Content);
+            loading = false;
+            chosenBreedResponse = chosenBreedBook;
+            await InvokeAsync(StateHasChanged);
+            return chosenBreedBook;
+
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+    }
+
+    public async Task<string> GetDogPictureURLByBreedUrl(string breed)
+    {
+        string url = Configuration.GetValue<string>("GetDogPictureURLByBreed") + "?apiKey=" + ApiKey + "&breed=" + breed;
+        RestClient client = new RestClient(url);
+        RestRequest request = new RestRequest();
+        client.AddDefaultHeader("Content-Type", "application/json");
+
+        try
+        {
+            RestResponse response = await client.GetAsync(request);
+            string dogPictureUrl = JsonConvert.DeserializeObject<string>(response.Content);
+            loadingDogPicture = dogPictureUrl;
+            //Not sure if all of these are necessary
+            await InvokeAsync(StateHasChanged);
+            return dogPictureUrl;
+
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+    }
+
+    public async void SaveBook()
+    {
+        string url = Configuration.GetValue<string>("SaveBookInformation") + "?apiKey=" + ApiKey;
+        RestClient client = new RestClient(url);
+        RestRequest request = new RestRequest();
+        client.AddDefaultHeader("Content-Type", "application/json");
+        request.AddParameter("application/json", chosenBreedResponse, ParameterType.RequestBody);
+
+        try
+        {
+            savingBookDelay = true;
+            RestResponse response = await client.PostAsync(request);
+
+            if(response.Content == "201")
+            {
+                //Another artificial delay
+                Thread.Sleep(TimeSpan.FromSeconds(3));
+
+                bookSaved = true;
+                savingBookDelay = false;
+            }
+            else
+            {
+               throw new Exception();
+            }
+            await InvokeAsync(StateHasChanged);
+
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+    }
+
+
+}

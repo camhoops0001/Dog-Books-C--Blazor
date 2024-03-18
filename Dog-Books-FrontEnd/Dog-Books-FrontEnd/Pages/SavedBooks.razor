@@ -1,0 +1,66 @@
+﻿@page "/saved-books"
+@using System.Text.Json
+@using Dog_Books_FrontEnd.Data
+@using Newtonsoft.Json
+@using RestSharp
+
+
+    @foreach(DogAndBookResponse book in AllSavedBooks)
+{
+    <p class="centered-content">
+        <b>
+            @book.Author
+        </b>
+        <br>
+        <b>
+            @book.Title
+        </b>
+        <br>
+        <img src="@book.DogPictureUrl"/>
+        <br> <br> <br>
+    </p>
+}
+
+
+
+@code {
+    [Inject]
+    private IConfiguration Configuration { get; set; }
+
+    private string ApiKey;
+
+    public List<DogAndBookResponse> AllSavedBooks = new List<DogAndBookResponse>();
+
+    protected override void OnInitialized()
+    {
+        ApiKey = Configuration.GetValue<string>("ApiKey");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        AllSavedBooks = await GetSavedBooks();
+        await InvokeAsync(StateHasChanged);
+    }
+
+    public async Task<List<DogAndBookResponse>> GetSavedBooks()
+    {
+        string url = Configuration.GetValue<string>("GetSavedBooks") + "?apiKey=" + ApiKey;
+        RestClient client = new RestClient(url);
+        RestRequest request = new RestRequest();
+        client.AddDefaultHeader("Content-Type", "application/json");
+
+        try
+        {
+            RestResponse response = await client.GetAsync(request);
+
+            List<DogAndBookResponse> dogAndBookResponse = JsonConvert.DeserializeObject<List<DogAndBookResponse>>(response.Content);
+            return dogAndBookResponse;
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+    }
+
+
+}
