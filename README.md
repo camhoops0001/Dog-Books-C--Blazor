@@ -1,6 +1,5 @@
 ## Project setup
 This is setup in Microsoft SQL Server Management Studio 18 <br>
-![image](https://github.com/camhoops0001/Dog-Books-C--Blazor/assets/95889699/0876c39f-6690-450f-9996-ed0281aaa13f)
 Run the two SQL files within the main folder
 ```
 step1_fresh_DogBooks-db
@@ -21,13 +20,11 @@ Dog-Books-Frontend.sln
 This will run the backend API and the front end Blazor application
 
 # Things to consider
-My local instance of SSMS is setup for (LocalDb)\MSSQLLocalDB
-![image](https://github.com/camhoops0001/Dog-Books-C--Blazor/assets/95889699/b1d00cc8-e3f6-4dc9-95c6-b80bd28dcb06)
+My local instance of SSMS is setup for Server Name (LocalDb)\MSSQLLocalDB
 
-If you connect like this instead:
-![image](https://github.com/camhoops0001/Dog-Books-C--Blazor/assets/95889699/3721a41f-fb2a-4f9e-bbb6-b344180fc390)
+If you connect to your local SQL instance with a single dot "." for Server Name.. <br>
 
-You will need to change your DefaultConnection within appsettings.json to Server=.\\SQLEXPRESS
+You will need to change your DefaultConnection within appsettings.json to Server=.\\SQLEXPRESS <br>
 ![image](https://github.com/camhoops0001/Dog-Books-C--Blazor/assets/95889699/66d50c82-ca64-41b3-9483-b48d420fd0a7)
 
 ## Application Information
